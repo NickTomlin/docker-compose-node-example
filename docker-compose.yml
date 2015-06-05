@@ -1,0 +1,11 @@
+web:
+  build: .
+  command: ./node_modules/.bin/nodemon index.js
+  ports:
+   - "5000:5000"
+  volumes:
+   - .:/code
+  links:
+   - redis
+redis:
+  image: redis
